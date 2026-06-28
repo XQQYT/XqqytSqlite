@@ -1,0 +1,6 @@
+ConnectionPage 1.0 ConnectionPage.qml
+DataBrowsePage 1.0 DataBrowsePage.qml
+SqlEditorPage 1.0 SqlEditorPage.qml
+SftpManagerPage 1.0 SftpManagerPage.qml
+TableDesignerPage 1.0 TableDesignerPage.qml
+SettingsPage 1.0 SettingsPage.qml

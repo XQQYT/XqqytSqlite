@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>main.qml</file>
+        <file alias="Theme.qml">style/Theme.qml</file>
+        <file alias="NeumorphismCard.qml">style/NeumorphismCard.qml</file>
+        <file alias="NeumorphismButton.qml">style/NeumorphismButton.qml</file>
+        <file alias="NeumorphismTextField.qml">style/NeumorphismTextField.qml</file>
+        <file alias="AppMenuBar.qml">components/AppMenuBar.qml</file>
+        <file alias="SideNav.qml">components/SideNav.qml</file>
+        <file alias="StatusBar.qml">components/StatusBar.qml</file>
+        <file alias="TabBar.qml">components/TabBar.qml</file>
+        <file alias="LoadingOverlay.qml">components/LoadingOverlay.qml</file>
+        <file alias="Toast.qml">components/Toast.qml</file>
+        <file alias="ConfirmDialog.qml">components/ConfirmDialog.qml</file>
+        <file alias="SplashScreen.qml">components/SplashScreen.qml</file>
+        <file alias="AboutDialog.qml">components/AboutDialog.qml</file>
+        <file alias="ConnectionPage.qml">pages/ConnectionPage.qml</file>
+        <file alias="DataBrowsePage.qml">pages/DataBrowsePage.qml</file>
+        <file alias="SqlEditorPage.qml">pages/SqlEditorPage.qml</file>
+        <file alias="SftpManagerPage.qml">pages/SftpManagerPage.qml</file>
+        <file alias="TableDesignerPage.qml">pages/TableDesignerPage.qml</file>
+        <file alias="SettingsPage.qml">pages/SettingsPage.qml</file>
+        <file alias="minimal.qml">minimal.qml</file>
+    </qresource>
+    <qresource prefix="/i18n">
+        <file alias="strings_zh.qm">i18n/strings_zh.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,9 @@
+AppMenuBar 1.0 AppMenuBar.qml
+SideNav 1.0 SideNav.qml
+StatusBar 1.0 StatusBar.qml
+TabBar 1.0 TabBar.qml
+LoadingOverlay 1.0 LoadingOverlay.qml
+Toast 1.0 Toast.qml
+ConfirmDialog 1.0 ConfirmDialog.qml
+SplashScreen 1.0 SplashScreen.qml
+AboutDialog 1.0 AboutDialog.qml
