@@ -1,0 +1,134 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "win-mingw-release",
+      "displayName": "Windows MinGW Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/win-mingw-release",
+      "cmakeExecutable": "E:/Qt6.8/Tools/CMake_64/bin/cmake.exe",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "E:/Qt6.8/Tools/mingw1310_64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "E:/Qt6.8/Tools/mingw1310_64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "E:/vcpkg/downloads/tools/ninja-1.13.2-windows/ninja.exe",
+        "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
+        "CMAKE_PREFIX_PATH": "E:/Qt6.8/6.8.3/mingw_64"
+      },
+      "environment": {
+        "PATH": "E:/Qt6.8/Tools/mingw1310_64/bin;E:/Qt6.8/Tools/CMake_64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "win-msvc-release",
+      "displayName": "Windows MSVC Release",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/win-msvc-release",
+      "cmakeExecutable": "cmake",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
+      }
+    },
+    {
+      "name": "win-msvc-debug",
+      "displayName": "Windows MSVC Debug",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/win-msvc-debug",
+      "cmakeExecutable": "cmake",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
+      }
+    },
+    {
+      "name": "linux-gcc-release",
+      "displayName": "Linux GCC Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/linux-gcc-release",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      }
+    },
+    {
+      "name": "linux-gcc-debug",
+      "displayName": "Linux GCC Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/linux-gcc-debug",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "win-msvc-release",
+      "configurePreset": "win-msvc-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "win-msvc-debug",
+      "configurePreset": "win-msvc-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-gcc-release",
+      "configurePreset": "linux-gcc-release"
+    },
+    {
+      "name": "linux-gcc-debug",
+      "configurePreset": "linux-gcc-debug"
+    }
+  ],
+  "packagePresets": [
+    {
+      "name": "win-portable-zip",
+      "displayName": "Windows Portable ZIP",
+      "configurePreset": "win-msvc-release",
+      "generators": ["ZIP"],
+      "configurations": ["Release"]
+    },
+    {
+      "name": "win-nsis-installer",
+      "displayName": "Windows NSIS Installer",
+      "configurePreset": "win-msvc-release",
+      "generators": ["NSIS"],
+      "configurations": ["Release"]
+    },
+    {
+      "name": "win-all",
+      "displayName": "Windows ZIP + NSIS",
+      "configurePreset": "win-msvc-release",
+      "generators": ["ZIP", "NSIS"],
+      "configurations": ["Release"]
+    },
+    {
+      "name": "linux-deb-tgz",
+      "displayName": "Linux DEB + TGZ",
+      "configurePreset": "linux-gcc-release",
+      "generators": ["DEB", "TGZ"]
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "win-msvc-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

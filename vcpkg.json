@@ -1,0 +1,10 @@
+{
+  "name": "remote-sqlite-qt",
+  "version": "0.1.0",
+  "description": "Remote SQLite management tool based on Qt 6.8 (QML + C++)",
+  "dependencies": [
+    "libssh2",
+    "openssl",
+    "zlib"
+  ]
+}
